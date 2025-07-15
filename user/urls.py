@@ -1,0 +1,10 @@
+
+
+from django.urls import path
+from user import views  # <-- Add this import
+
+urlpatterns = [
+
+    path('login/', views.login, name='login'),
+ 
+]
