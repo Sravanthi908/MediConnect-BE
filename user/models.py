@@ -1,15 +1,10 @@
-
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
-class User(models.Model):
-    name=models.CharField(max_length=20)
-    email=models.EmailField(unique=True)
-    password=models.CharField(max_length=10)
-    userName=models.CharField(max_length=20,unique=True)
-    dob=models.CharField(max_length=8)
-    mobile=models.IntegerField(max_length=10)
+class UserLocation(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
 
-
-    def str(self):
-        return self.name
+    def __str__(self):
+        return f"{self.user.username}'s Location"

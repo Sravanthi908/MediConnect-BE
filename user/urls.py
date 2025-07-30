@@ -1,10 +1,8 @@
-
-
 from django.urls import path
-from user import views  # <-- Add this import
+from .views import RegisterView, LoginView, SetLocationView
 
 urlpatterns = [
-
-    path('login/', views.login, name='login'),
- 
+    path('register/', RegisterView.as_view()),
+    path('login/', LoginView.as_view()),
+    path('set-location/', SetLocationView.as_view()),
 ]
