@@ -1,7 +1,11 @@
-from django.urls import path
-from .views import HospitalListView, HospitalDetailView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import HospitalViewSet, DoctorViewSet
+
+router = DefaultRouter()
+router.register(r'hospitals', HospitalViewSet)
+router.register(r'doctors', DoctorViewSet)
 
 urlpatterns = [
-    path("", HospitalListView.as_view(), name="hospital-list"),
-    path("<int:pk>/", HospitalDetailView.as_view(), name="hospital-detail"),
+    path('', include(router.urls)),
 ]

@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import Appointment
+from .models import Appointment   # ✅ must match class name exactly
 
-@admin.register(Appointment)
-class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'appointment_datetime')  # removed patient_name
+admin.site.register(Appointment)

@@ -1,11 +1,12 @@
-from rest_framework import generics
-from .models import Hospital
-from .serializers import HospitalSerializer
+from rest_framework import viewsets
+from .models import Hospital, Doctor
+from .serializers import HospitalSerializer, DoctorSerializer
 
-class HospitalListView(generics.ListAPIView):
+class HospitalViewSet(viewsets.ModelViewSet):
     queryset = Hospital.objects.all()
     serializer_class = HospitalSerializer
 
-class HospitalDetailView(generics.RetrieveAPIView):
-    queryset = Hospital.objects.all()
-    serializer_class = HospitalSerializer
+
+class DoctorViewSet(viewsets.ModelViewSet):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
