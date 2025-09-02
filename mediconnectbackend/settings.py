@@ -13,8 +13,7 @@ SECRET_KEY = "django-insecure-your-secret-key"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]  # Allow all for development, restrict in production
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,7 +38,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",  # CORS must be before CommonMiddleware
+    "corsheaders.middleware.CorsMiddleware",  # Must be high in the list
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -67,15 +66,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mediconnectbackend.wsgi.application"
 
-
-# Database
+# Database (SQLite for development)
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",  # Change to PostgreSQL/MySQL in production
+        "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -85,24 +82,27 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Media files (for hospital images, doctor profile pics, etc.)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-# ✅ Custom user model
+# Custom user model
 AUTH_USER_MODEL = "user.User"
 
-# ✅ DRF setup
+# Django REST Framework configuration
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
@@ -112,5 +112,9 @@ REST_FRAMEWORK = {
     ],
 }
 
-# ✅ CORS setup (allow frontend requests)
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS configuration (for frontend React at :5173)
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+CORS_ALLOW_ALL_ORIGINS = True  # allow everything in dev (remove in prod)
