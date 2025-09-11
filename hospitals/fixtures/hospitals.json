@@ -1,0 +1,444 @@
+[
+  {
+    "model": "hospitals.hospital",
+    "pk": 1,
+    "fields": {
+      "name": "City General Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814546-8b267a6fbb01?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 25,
+      "category": "general",
+      "description": "A multi-specialty hospital offering 24/7 emergency care, advanced diagnostics, and outpatient services."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 2,
+    "fields": {
+      "name": "Sunrise Medical Center",
+      "img": "https://images.unsplash.com/photo-1588776814130-242b823d1b6e?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 18,
+      "category": "general",
+      "description": "Well-equipped hospital providing quality healthcare, surgery, and family medicine."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 3,
+    "fields": {
+      "name": "MetroCare Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814058-72c2f042b33f?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 40,
+      "category": "general",
+      "description": "A leading healthcare institution known for modern facilities, expert doctors, and patient care."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 4,
+    "fields": {
+      "name": "Green Valley Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814272-6b0d6712b16e?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 12,
+      "category": "general",
+      "description": "Trusted hospital with experienced physicians, outpatient services, and diagnostic labs."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 5,
+    "fields": {
+      "name": "Global Health Institute",
+      "img": "https://images.unsplash.com/photo-1588776814040-07bdfd7f35e2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 30,
+      "category": "general",
+      "description": "Internationally recognized hospital offering advanced treatments and medical research facilities."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 6,
+    "fields": {
+      "name": "Lotus Women’s Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814036-4667ecb7620e?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 15,
+      "category": "women",
+      "description": "Specialized hospital for women’s health, maternity, and gynecological services."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 7,
+    "fields": {
+      "name": "Grace Maternity Center",
+      "img": "https://images.unsplash.com/photo-1588776814137-611d37b269b2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 10,
+      "category": "women",
+      "description": "Dedicated hospital for maternity care, women’s wellness, and newborn health."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 8,
+    "fields": {
+      "name": "Hope Women’s Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814178-89b462e2edc6?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 8,
+      "category": "women",
+      "description": "Women-focused healthcare clinic offering consultations, diagnostics, and specialized treatments."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 9,
+    "fields": {
+      "name": "Sri Devi Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814256-0d5d8497c6ab?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 14,
+      "category": "women",
+      "description": "Trusted women’s hospital with facilities for maternity, fertility, and preventive health."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 10,
+    "fields": {
+      "name": "Shakti Women’s Healthcare",
+      "img": "https://images.unsplash.com/photo-1588776814263-0e7d1a41e6e4?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 11,
+      "category": "women",
+      "description": "Comprehensive women’s hospital focusing on holistic care and wellness."
+    }
+  },
+
+  {
+    "model": "hospitals.hospital",
+    "pk": 11,
+    "fields": {
+      "name": "Heart Care Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814500-xyz123?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 20,
+      "category": "cardiology",
+      "description": "Advanced cardiac care hospital with specialized surgeons and modern facilities."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 12,
+    "fields": {
+      "name": "Silverline Orthopedic Center",
+      "img": "https://images.unsplash.com/photo-1588776814520-orthopedic1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 9,
+      "category": "orthopedic",
+      "description": "Expert orthopedic hospital providing bone and joint treatments."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 13,
+    "fields": {
+      "name": "Golden Smile Dental Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814560-dental1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 7,
+      "category": "dental",
+      "description": "Trusted dental hospital offering cosmetic and surgical dentistry."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 14,
+    "fields": {
+      "name": "Diamond Eye Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814590-eye1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 16,
+      "category": "ophthalmology",
+      "description": "Eye care hospital offering advanced vision correction and surgery."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 15,
+    "fields": {
+      "name": "Gemstone Skin & Hair Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814610-derma1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 5,
+      "category": "dermatology",
+      "description": "Specialized skin and hair care hospital with modern treatments."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 16,
+    "fields": {
+      "name": "Apollo Men’s Health Center",
+      "img": "https://images.unsplash.com/photo-1588776814630-men1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 14,
+      "category": "men",
+      "description": "Hospital dedicated to men’s health, fitness, and preventive check-ups."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 17,
+    "fields": {
+      "name": "Men’s Wellness Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814640-men2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 9,
+      "category": "men",
+      "description": "Healthcare center offering men’s wellness, urology, and lifestyle treatments."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 18,
+    "fields": {
+      "name": "Starlight Men’s Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814650-men3?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 12,
+      "category": "men",
+      "description": "Multi-specialty hospital focusing on men’s health and rehabilitation."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 19,
+    "fields": {
+      "name": "PrimeCare Men’s Health",
+      "img": "https://images.unsplash.com/photo-1588776814660-men4?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 10,
+      "category": "men",
+      "description": "Modern healthcare unit with experienced doctors for men’s health issues."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 20,
+    "fields": {
+      "name": "Healthy Life Men’s Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814670-men5?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 6,
+      "category": "men",
+      "description": "Clinic providing holistic men’s healthcare and wellness programs."
+    }
+  },
+
+  {
+    "model": "hospitals.hospital",
+    "pk": 21,
+    "fields": {
+      "name": "Harmony Children’s Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814680-pedia1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 22,
+      "category": "pediatrics",
+      "description": "Child-friendly hospital offering pediatric care and neonatal services."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 22,
+    "fields": {
+      "name": "Wellness Multi-Specialty Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814376-4d08a5584f5e?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 28,
+      "category": "general",
+      "description": "A multi-specialty hospital with departments for all major medical fields."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 23,
+    "fields": {
+      "name": "PlayLife Rehabilitation Center",
+      "img": "https://images.unsplash.com/photo-1588776814700-rehab1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 7,
+      "category": "rehabilitation",
+      "description": "Specialized hospital for physiotherapy, rehabilitation, and recovery."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 24,
+    "fields": {
+      "name": "VisionCare Eye Institute",
+      "img": "https://images.unsplash.com/photo-1588776814600-eye2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 18,
+      "category": "ophthalmology",
+      "description": "Renowned hospital for advanced eye care and laser surgery."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 25,
+    "fields": {
+      "name": "ConnectLife Neurology Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814710-neuro1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 10,
+      "category": "neurology",
+      "description": "Hospital specializing in brain, nerves, and neurological disorders."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 26,
+    "fields": {
+      "name": "CarePlus Maternity Center",
+      "img": "https://images.unsplash.com/photo-1588776814307-583a61b9d4df?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 12,
+      "category": "women",
+      "description": "Women’s hospital focusing on maternity and postnatal care."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 27,
+    "fields": {
+      "name": "Bloom Women’s Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814400-1c7a2c12d5f2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 15,
+      "category": "women",
+      "description": "Specialty hospital for fertility, gynecology, and maternal health."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 28,
+    "fields": {
+      "name": "RoseCare Women’s Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814418-1d9f6c3f0b34?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 9,
+      "category": "women",
+      "description": "Women-centered healthcare center offering all essential services."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 29,
+    "fields": {
+      "name": "Mother’s Hope Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814428-8d7b1c9f8cde?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 11,
+      "category": "women",
+      "description": "Dedicated maternity and gynecology hospital with specialist doctors."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 30,
+    "fields": {
+      "name": "Trinity Women’s Health",
+      "img": "https://images.unsplash.com/photo-1588776814438-abcdef123456?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 13,
+      "category": "women",
+      "description": "Women’s hospital providing preventive care, maternity, and wellness."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 31,
+    "fields": {
+      "name": "Pearl Heart Institute",
+      "img": "https://images.unsplash.com/photo-1588776814510-abc123?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 19,
+      "category": "cardiology",
+      "description": "Cardiology hospital with advanced surgery and heart care units."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 32,
+    "fields": {
+      "name": "Golden Bone Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814530-orthopedic2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 14,
+      "category": "orthopedic",
+      "description": "Specialized orthopedic hospital for joint replacement and trauma care."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 33,
+    "fields": {
+      "name": "Silver Smile Dental Care",
+      "img": "https://images.unsplash.com/photo-1588776814570-dental2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 8,
+      "category": "dental",
+      "description": "Modern dental clinic providing orthodontics and cosmetic care."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 34,
+    "fields": {
+      "name": "Titanium Ortho Center",
+      "img": "https://images.unsplash.com/photo-1588776814540-orthopedic3?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 10,
+      "category": "orthopedic",
+      "description": "Advanced orthopedic hospital for bones, spine, and sports injuries."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 35,
+    "fields": {
+      "name": "Leatherstone Skin Clinic",
+      "img": "https://images.unsplash.com/photo-1588776814620-derma2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 6,
+      "category": "dermatology",
+      "description": "Skin and cosmetic care hospital with modern laser technology."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 36,
+    "fields": {
+      "name": "Harmony ENT Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814720-ent1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 11,
+      "category": "ent",
+      "description": "Specialized ENT hospital for ear, nose, and throat treatments."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 37,
+    "fields": {
+      "name": "PulseCare Multi-Specialty Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814331-dc2a82e0c9c1?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 21,
+      "category": "general",
+      "description": "Comprehensive hospital with 24/7 emergency, ICU, and advanced surgical facilities."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 38,
+    "fields": {
+      "name": "Sunshine Children’s Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814740-pedia2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 17,
+      "category": "pediatrics",
+      "description": "Specialized children’s hospital with pediatricians, neonatology, and child-friendly facilities."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 39,
+    "fields": {
+      "name": "NeuroPlus Brain & Spine Institute",
+      "img": "https://images.unsplash.com/photo-1588776814760-neuro2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 13,
+      "category": "neurology",
+      "description": "Advanced neurology hospital providing treatments for brain, spine, and nerve disorders."
+    }
+  },
+  {
+    "model": "hospitals.hospital",
+    "pk": 40,
+    "fields": {
+      "name": "LifeCare Multi-Specialty Hospital",
+      "img": "https://images.unsplash.com/photo-1588776814780-general2?auto=format&fit=crop&w=800&q=80",
+      "availableDoctors": 26,
+      "category": "general",
+      "description": "A modern multi-specialty hospital offering comprehensive healthcare across multiple departments."
+    }
+  }
+]
