@@ -32,5 +32,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/user/", include("user.urls")),
     path("api/", include(router.urls)),
-    path('api/', include('hospitals.urls')),
+    path('api/', include('hospitals.urls')),# project/urls.py
+
+
+
+    path('admin/', admin.site.urls),
+    path('api/', include('user.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
