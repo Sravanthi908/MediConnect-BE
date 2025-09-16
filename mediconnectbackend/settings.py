@@ -3,6 +3,7 @@ Django settings for mediconnectbackend project.
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +16,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]  # Allow all for development, restrict in production
 
+# -------------------------------------------------------------------
 # Application definition
+# -------------------------------------------------------------------
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -66,7 +69,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mediconnectbackend.wsgi.application"
 
+# -------------------------------------------------------------------
 # Database (SQLite for development)
+# -------------------------------------------------------------------
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -74,7 +79,9 @@ DATABASES = {
     }
 }
 
+# -------------------------------------------------------------------
 # Password validation
+# -------------------------------------------------------------------
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -82,39 +89,58 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
+# -------------------------------------------------------------------
 # Internationalization
+# -------------------------------------------------------------------
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# -------------------------------------------------------------------
+# Static & Media files
+# -------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Media files (for hospital images, doctor profile pics, etc.)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+# -------------------------------------------------------------------
 # Default primary key field type
+# -------------------------------------------------------------------
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# -------------------------------------------------------------------
 # Custom user model
+# -------------------------------------------------------------------
 AUTH_USER_MODEL = "user.User"
 
-# Django REST Framework configuration
+# -------------------------------------------------------------------
+# Django REST Framework & JWT
+# -------------------------------------------------------------------
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
 }
 
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+
+# -------------------------------------------------------------------
 # CORS configuration (for frontend React at :5173)
+# -------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
-CORS_ALLOW_ALL_ORIGINS = True  # allow everything in dev (remove in prod)
+CORS_ALLOW_ALL_ORIGINS = True  # Allow everything in dev (remove in prod)

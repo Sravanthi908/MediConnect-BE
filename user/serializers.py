@@ -1,39 +1,54 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
-from .models import User  # Import your custom User model
+from django.contrib.auth import authenticate, get_user_model
 
-class UserSerializer(serializers.Serializer):
-    username = serializers.CharField(
-        max_length=150,
-        validators=[UniqueValidator(queryset=User.objects.all())]  # Use custom User model
-    )
-    password = serializers.CharField(write_only=True, min_length=8)
-    email = serializers.EmailField(
-        validators=[UniqueValidator(queryset=User.objects.all())]  # Use custom User model
-    )
-    name = serializers.CharField(write_only=True)
+User = get_user_model()
+
+
+class RegisterSerializer(serializers.ModelSerializer):
+    confirm_password = serializers.CharField(write_only=True)
+    full_name = serializers.CharField(write_only=True)
+    role = serializers.ChoiceField(choices=[("Patient", "Patient"), ("Doctor", "Doctor")])
+
+    class Meta:
+        model = User
+        fields = ["id", "username", "email", "password", "confirm_password", "full_name", "role"]
+        extra_kwargs = {
+            "password": {"write_only": True},
+        }
+
+    def validate(self, data):
+        if data["password"] != data["confirm_password"]:
+            raise serializers.ValidationError("Passwords do not match")
+        return data
 
     def create(self, validated_data):
-        # Split name into first and last name
-        full_name = validated_data.pop('name', '')
-        first_name, last_name = full_name.split(' ', 1) if ' ' in full_name else (full_name, '')
-        
-        # Create user with split names
+        validated_data.pop("confirm_password")
+        full_name = validated_data.pop("full_name")
         user = User.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data['email'],
-            password=validated_data['password'],
-            first_name=first_name,
-            last_name=last_name
+            username=validated_data["username"],
+            email=validated_data.get("email", ""),
+            password=validated_data["password"],
+            role=validated_data.get("role", "Patient")
         )
+        if hasattr(user, "full_name"):
+            user.full_name = full_name
+            user.save()
         return user
 
-    def to_representation(self, instance):
-        # Customize the response data
-        return {
-            'id': instance.id,
-            'username': instance.username,
-            'email': instance.email,
-            'first_name': instance.first_name,
-            'last_name': instance.last_name
-        }
+
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        user = authenticate(username=data["username"], password=data["password"])
+        if not user:
+            raise serializers.ValidationError("Invalid username or password")
+        data["user"] = user
+        return data
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "username", "email", "role"]
