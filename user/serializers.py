@@ -7,7 +7,8 @@ User = get_user_model()
 class RegisterSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(write_only=True)
     full_name = serializers.CharField(write_only=True)
-    role = serializers.ChoiceField(choices=[("Patient", "Patient"), ("Doctor", "Doctor")])
+    # ✅ lowercase choices to match frontend
+    role = serializers.ChoiceField(choices=[("patient", "Patient"), ("doctor", "Doctor")])
 
     class Meta:
         model = User
@@ -18,7 +19,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         if data["password"] != data["confirm_password"]:
-            raise serializers.ValidationError("Passwords do not match")
+            raise serializers.ValidationError({"password": "Passwords do not match"})
         return data
 
     def create(self, validated_data):
@@ -28,11 +29,11 @@ class RegisterSerializer(serializers.ModelSerializer):
             username=validated_data["username"],
             email=validated_data.get("email", ""),
             password=validated_data["password"],
-            role=validated_data.get("role", "Patient")
+            role=validated_data.get("role", "patient"),
         )
-        if hasattr(user, "full_name"):
-            user.full_name = full_name
-            user.save()
+        # ✅ save full_name
+        user.full_name = full_name
+        user.save()
         return user
 
 
@@ -51,4 +52,5 @@ class LoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "username", "email", "role"]
+        # ✅ include full_name so frontend gets it
+        fields = ["id", "username", "email", "full_name", "role"]
