@@ -7,7 +7,7 @@ User = get_user_model()
 class RegisterSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(write_only=True)
     full_name = serializers.CharField(write_only=True)
-    # ✅ lowercase choices to match frontend
+    
     role = serializers.ChoiceField(choices=[("patient", "Patient"), ("doctor", "Doctor")])
 
     class Meta:
