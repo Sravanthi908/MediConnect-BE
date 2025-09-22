@@ -31,7 +31,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data["password"],
             role=validated_data.get("role", "patient"),
         )
-        # ✅ save full_name
+       
         user.full_name = full_name
         user.save()
         return user
