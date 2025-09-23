@@ -52,5 +52,5 @@ class LoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        # ✅ include full_name so frontend gets it
+        
         fields = ["id", "username", "email", "full_name", "role"]
